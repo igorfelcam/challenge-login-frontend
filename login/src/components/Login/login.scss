@@ -10,3 +10,14 @@
     margin-left: -10%;
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .container {
+      
+    &__login {
+      flex: 3;
+      margin-left: 0;
+    }
+
+  }
+}

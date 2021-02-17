@@ -14,3 +14,13 @@
     }
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .container {
+      
+    &__banner {
+      flex: 2;
+    }
+
+  }
+}

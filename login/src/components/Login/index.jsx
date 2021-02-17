@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { Form } from './components/Form';
+import { Reset } from './components/Reset';
+
 import './login.scss';
 
 export const Login = () => {
@@ -8,7 +11,10 @@ export const Login = () => {
     <>
 
       <div className="container__login">
-        <h2>Login</h2>
+        
+        <Form />
+        <Reset />
+
       </div>
 
     </>

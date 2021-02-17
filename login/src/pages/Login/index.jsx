@@ -11,6 +11,7 @@ export const LoginPage = () => {
     <>
 
       <div className="container">
+        <h1 className="container--hidden">Wiser Educação</h1>
         <Banner />
         <Login />
       </div>

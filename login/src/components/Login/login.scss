@@ -1,7 +1,12 @@
 .container {
 
   &__login {
-    flex: 5;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: -10%;
   }
-
 }

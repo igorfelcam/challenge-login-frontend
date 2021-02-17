@@ -8,11 +8,8 @@ export const Banner = () => {
     <>
 
       <div className="container__banner">
-        
         <div className="container__banner--gradient-color"></div>
-        
       </div>
-
 
     </>
   );

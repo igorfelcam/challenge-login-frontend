@@ -1,17 +1,21 @@
 import React from 'react';
 
-function Login() {
+import { Banner } from '../../components/Banner/';
+import { Login } from '../../components/Login/';
+
+import './login.scss';
+
+export const LoginPage = () => {
 
   return (
     <>
 
-      <h1>
-        Hello Wiser
-      </h1>
+      <div className="container">
+        <Banner />
+        <Login />
+      </div>
 
     </>
   );
 
 }
-
-export default Login;

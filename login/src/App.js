@@ -1,18 +1,16 @@
 import React from 'react';
 
-import Login from './pages/Login/'
-// import logo from './wiser-banner.jpg';
+import { LoginPage } from './pages/Login/';
+
+import './assets/reset.scss';
 
 function App() {
   return (
-
     <>
 
-      {/* <img src={logo} alt="logo" /> */}
-      <Login />
-
+      <LoginPage />
+      
     </>
-
   );
 }
 

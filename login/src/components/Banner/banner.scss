@@ -1,0 +1,18 @@
+.container {
+
+  &__banner {
+    flex: 6;
+    height: 100%;
+    background-image: url('../../assets/wiser-banner.jpg');
+    background-position: center;
+    background-size: cover;
+    
+    &--gradient-color {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, #130525 0%, rgba(105, 57, 153, 0) 100%);
+    }
+
+  }
+
+}

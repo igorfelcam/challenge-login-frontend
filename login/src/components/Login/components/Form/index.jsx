@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Input } from '../../../Input'
 import { Button } from '../../../Button'
@@ -7,13 +7,30 @@ import './form.scss';
 
 export const Form = () => {
 
+  const [email, setEmail] = useState(`user.name@mail.com`);
+  const [emailStatus, setEmailStatus] = useState(true);
+  const [password, setPassword] = useState(`123456`);
+  const [passwordStatus, setPasswordStatus] = useState(true);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    if (email === `igorfelcam@mail.com`) {
+      setEmailStatus(false);
+    }
+
+    if (password === `123`) {
+      setPasswordStatus(false);
+    }
+
+    alert(`${email} - ${emailStatus} | ${password} - ${passwordStatus}`);
+  }
+
   return (
     <>
-
-      <div className="form">
+      <form className="form" onSubmit={handleSubmit}>
         
         <h2 className="form__title">Olá, seja bem-vindo!</h2>
-        
         <p className="form__description">Para acessar a plataforma, faça seu login.</p>
 
         <Input
@@ -25,7 +42,9 @@ export const Form = () => {
           inputType="email"
           inputName="email"
           styleInputClassMessage="form__input--error"
-          error={false}
+          status={emailStatus}
+          inputValue={email}
+          setInputValue={setEmail}
         />
 
         <Input
@@ -37,17 +56,18 @@ export const Form = () => {
           inputType="password"
           inputName="password"
           styleInputClassMessage="form__input--error"
-          error={false}
+          status={passwordStatus}
+          inputValue={password}
+          setInputValue={setPassword}
         />
 
         <Button
           styleClass="form__button"
           text="entrar"
+          buttonType="submit"
         />
 
-      </div>
-
+      </form>
     </>
   );
-
 }

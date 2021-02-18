@@ -6,10 +6,7 @@ export const Button = props => {
 
   return (
     <>
-
-      <button className={props.styleClass}>{props.text}</button>
-
+      <button className={props.styleClass} type={props.buttonType}>{props.text}</button>
     </>
   );
-
 }

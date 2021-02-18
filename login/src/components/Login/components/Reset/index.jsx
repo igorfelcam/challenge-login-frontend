@@ -11,7 +11,7 @@ export const Reset = () => {
         
         <p>Esqueceu seu login ou senha?
           <div>
-            Clique <a className="reset__link" href="#">aqui</a>
+            Clique <a className="reset__link" href="https://wisereducacao.com/">aqui</a>
           </div>
         </p>
 

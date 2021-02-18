@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { Input } from '../../../Input'
 import { Button } from '../../../Button'
 
+import api from '../../../../services/api';
+
 import './form.scss';
 
 export const Form = () => {
@@ -12,18 +14,42 @@ export const Form = () => {
   const [password, setPassword] = useState(`123456`);
   const [passwordStatus, setPasswordStatus] = useState(true);
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
 
-    if (email === `igorfelcam@mail.com`) {
-      setEmailStatus(false);
+    let status = true;
+
+    if (email === `wiser@mail.com`) {
+      status = false;
+      setEmailStatus(status);
     }
 
     if (password === `123`) {
-      setPasswordStatus(false);
+      status = false;
+      setPasswordStatus(status);
     }
 
-    alert(`${email} - ${emailStatus} | ${password} - ${passwordStatus}`);
+    if (!status) {
+      return;
+    }
+
+    api.post()
+      .then(
+        response => {
+
+          console.log(response.data);
+
+          const status = response.data.status;
+
+          if (!status) {
+            setEmailStatus(status);
+            setPasswordStatus(status);
+          }
+
+          return;
+        }
+      )
+      .catch();
   }
 
   return (

@@ -14,7 +14,7 @@ export const Form = () => {
         
         <h2 className="form__title">Olá, seja bem-vindo!</h2>
         
-        <p className="form__description">Para acessar a plataforma, <div>faça seu login.</div></p>
+        <p className="form__description">Para acessar a plataforma, faça seu login.</p>
 
         <Input
           styleWrapClass="form__wrap"
@@ -25,7 +25,7 @@ export const Form = () => {
           inputType="email"
           inputName="email"
           styleInputClassMessage="form__input--error"
-          error={true}
+          error={false}
         />
 
         <Input

@@ -18,6 +18,16 @@
       flex: 3;
       margin-left: 0;
     }
+  }
+}
 
+@media only screen and (max-width: 600px) {
+  .container {
+      
+    &__login {
+      height: 80%;
+      z-index: 9;
+      margin-top: 2rem;
+    }
   }
 }

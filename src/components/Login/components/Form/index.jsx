@@ -43,7 +43,7 @@ export const Form = () => {
       setEmailStatus(status);
     }
 
-    if (password === `123`) {
+    if (password !== `123456`) {
       status = false;
       setPasswordStatus(status);
     }

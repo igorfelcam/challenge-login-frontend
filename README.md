@@ -10,6 +10,20 @@ Para rodar a aplicação, execute os seguintes comandos:
 Assim irá rodar em modo de desenvolvimento, acesse em seu navegador o endereço http://localhost:3000/.
 
 ---
+
+Para visualizar a validação do login:
+
+### Sucesso:
+E-mail: user.name@mail.com
+
+Senha: 123456
+
+### Erro:
+Qualquer e-mail diferente de user.name@mail.com
+
+Senha igual diferente a 123456
+
+---
 ## Stack utilizada
 
 Essa aplicação foi construída com ReactJS, aplicando Hooks e Axios.

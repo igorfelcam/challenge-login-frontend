@@ -33,15 +33,35 @@
   }
 
   &__input {
-    width: 100%;
-    padding: 17px;
-    border-radius: 8px;
-    border: 1px solid #989FDB;
-    color: #989FDB;
-    background: #FAF5FF;
-    font-size: 10px;
+    position: relative;
 
-    &--error {
+    &--input {
+      width: 100%;
+      padding: 17px;
+      border-radius: 8px;
+      border: 1px solid #989FDB;
+      color: #989FDB;
+      background: #FAF5FF;
+      font-size: 10px;
+
+      &--error {
+        border: 1px solid #FF377F;
+      }
+    }
+
+    &--icon {
+      color: #FF377F;
+      position: absolute;
+    
+      height: 100%;
+      padding: 0 1.2rem;
+      right: 0;
+      display: inline-flex;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    &--message {
       color: #FF377F;
       padding-left: 17px;
       padding-top: 8px;
@@ -90,23 +110,6 @@
 
     &__wrap {
       text-align: left;
-    }
-
-    &__input {
-      width: 100%;
-      padding: 17px;
-      border-radius: 8px;
-      border: 1px solid #989FDB;
-      color: #989FDB;
-      background: #FAF5FF;
-
-      &--error {
-        color: #FF377F;
-        padding-left: 17px;
-        padding-top: 8px;
-        font-size: 10px;
-        font-weight: 400;
-      }
     }
 
     &__button {

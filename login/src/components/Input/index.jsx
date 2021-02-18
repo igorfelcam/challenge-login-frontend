@@ -4,14 +4,35 @@ import './input.scss';
 
 export const Input = props => {
 
-  const [message, setMessage] = useState();
+  const [messageError, setMessageError] = useState(``);
   
   useEffect(
     () => {
-      return props.status ? ``: setMessage(`Digite um(a) ${props.textLabel} válido(a);`);
+      return props.status ? setMessageError(``) : setMessageError(`Digite um(a) ${props.textLabel} válido(a);`);
     },
     [props.status, props.textLabel]
   );
+
+
+  const [styleError, setStyleError] = useState(``);
+
+  useEffect(
+    () => {
+      return props.status ? setStyleError(``): setStyleError(`${props.styleInputClass}--input--error`);
+    },
+    [props.status, props.styleInputClass]
+  );
+
+
+  const [iconError, setIconError] = useState(``);
+  
+  useEffect(
+    () => {
+      return props.status ? setIconError(``): setIconError(`X`);
+    },
+    [props.status]
+  );
+
 
   const [inputValue, setInputValue] = useState(props.inputValue);
   
@@ -21,29 +42,37 @@ export const Input = props => {
     }
   );
 
+
   const valueHandler = e => {
     setInputValue(e.target.value);
   }
 
+
   return (
     <>
-      <div className={props.styleWrapClass}>
+      <div className={`${props.styleWrapClass}`}>
         
         <label className={props.styleLabelClass}
           htmlFor={props.inputId}>
             {props.textLabel}
         </label>
         
-        <input className={props.styleInputClass}
-          type={props.inputType}
-          name={props.inputName}
-          id={props.inputId}
-          value={inputValue}
-          onChange={valueHandler}
-        />
-        
-        <span className={props.styleInputClassMessage}>
-          {message}
+        <div className={props.styleInputClass}>
+          <input className={`${props.styleInputClass}--input ${styleError}`}
+            type={props.inputType}
+            name={props.inputName}
+            id={props.inputId}
+            value={inputValue}
+            onChange={valueHandler}
+          />
+          
+          <span className={`${props.styleInputClass}--icon`}>
+            {iconError}
+          </span>
+        </div>
+
+        <span className={`${props.styleInputClass}--message`}>
+          {messageError}
         </span>
         
       </div>

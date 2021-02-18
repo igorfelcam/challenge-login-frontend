@@ -17,9 +17,28 @@ export const Form = () => {
   const handleSubmit = async e => {
     e.preventDefault();
 
+    await api.post()
+      .then(
+        response => {
+
+          console.log(response.data);
+
+          const statusResponse = response.data.status;
+          setEmailStatus(statusResponse);
+
+          return;
+        }
+      )
+      .catch();
+
+    return validLogin();
+  }
+
+
+  function validLogin() {
     let status = true;
 
-    if (email === `wiser@mail.com`) {
+    if (email !== `user.name@mail.com`) {
       status = false;
       setEmailStatus(status);
     }
@@ -28,29 +47,8 @@ export const Form = () => {
       status = false;
       setPasswordStatus(status);
     }
-
-    if (!status) {
-      return;
-    }
-
-    api.post()
-      .then(
-        response => {
-
-          console.log(response.data);
-
-          const status = response.data.status;
-
-          if (!status) {
-            setEmailStatus(status);
-            setPasswordStatus(status);
-          }
-
-          return;
-        }
-      )
-      .catch();
   }
+
 
   return (
     <>
@@ -67,7 +65,6 @@ export const Form = () => {
           inputId="email"
           inputType="email"
           inputName="email"
-          styleInputClassMessage="form__input--error"
           status={emailStatus}
           inputValue={email}
           setInputValue={setEmail}
@@ -81,7 +78,6 @@ export const Form = () => {
           inputId="password"
           inputType="password"
           inputName="password"
-          styleInputClassMessage="form__input--error"
           status={passwordStatus}
           inputValue={password}
           setInputValue={setPassword}
